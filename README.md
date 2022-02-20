@@ -1,7 +1,7 @@
 # TimeSheet
 
 servers:
-  - url: 'http://localhost:3000/api
+	url: 'http://localhost:3000/api
 
 Paths:
 	‘/user/:id/:description/:startTime/startNewTime’
