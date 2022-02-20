@@ -24,6 +24,9 @@ Paths:
 			Name: startTime
 			In: path
 			Required: true
+		Reponses:
+			‘200’:
+			Desciption: OK
 
 	‘/user/:userId/:activityId/:endTime/setEndTime’
 	PATCH:
@@ -45,17 +48,20 @@ Paths:
 			Name: endTime
 			In: path
 			Required: true
+		Reponses:
+			‘200’:
+			Desciption: OK
 
 
 
 	‘statistics/:userId?/getStatistics’
 	Get:
 		Parameters:
-		-in: query
-		Name: userId
-		Schema:
-			Type: string
-		Required: false
+			-in: query
+			Name: userId
+			Schema:
+				Type: string
+			Required: false
 		Reponses:
 			‘200’:
 			Desciption: OK
