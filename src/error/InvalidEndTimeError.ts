@@ -1,0 +1,1 @@
+export class InvalidEndTimeError extends Error {}
