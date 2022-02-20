@@ -7,7 +7,6 @@ import { AppConfig } from "./config/AppConfig";
 import { Runtime } from './Runtime';
 import { bootstrap } from "./Bootstrap";
 
-console.log('index');
 const dbConfigObject = {
     driver: 'driver',
     host: 'localhost',
