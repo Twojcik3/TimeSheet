@@ -33,11 +33,11 @@ export class UserHandler implements IUserHandler {
     }
 
     public async setEndTimeOnActivity(setEndTimeOnActivityInput: ISetEndTime): Promise<void> {
-        const user = await this.userService.getUserById('setStartTimeInput.id');
+        const user = await this.userService.getUserById(setEndTimeOnActivityInput.userId);
         if (!user){
             throw new UserDoesNotExistError('User does not exsist');
         } 
-        const timeSheet = await this.timeSheetService.getById('setStartTimeInput.id');
+        const timeSheet = await this.timeSheetService.getById(setEndTimeOnActivityInput.activityId);
         if (!timeSheet) {
             throw new ActivityDoesNotExistError('Activity does not exist');
         }
