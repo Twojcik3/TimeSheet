@@ -9,7 +9,7 @@ import { ISetEndTime } from '../../http/controller/user/input/ISetEndTime';
 @injectable()
 @EntityRepository(TimeSheetLog)
 export class PostgreSQLTimeSheetRepository extends Repository<TimeSheetLog> implements ITimeSheetRepository {
-    public async getLastActivityForUser(userId: string, acitivtyId?: string): Promise<TimeSheetLog> {
+    public async getLastActivityForUser(userId: string): Promise<TimeSheetLog> {
         const queryResult = await this.query(`SELECT * FROM "time_sheet_log" WHERE "userId" = '${userId}' AND "createdAt" = (SELECT MIN("createdAt") FROM "time_sheet_log" WHERE "userId" = '${userId}')`);
         return queryResult;
     }

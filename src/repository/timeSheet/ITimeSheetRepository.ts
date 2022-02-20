@@ -4,7 +4,7 @@ import { ISetStartTime } from "../../http/controller/user/input/ISetStartTime";
 import { ISetEndTime } from "../../http/controller/user/input/ISetEndTime";
 
 export interface ITimeSheetRepository {
-    getLastActivityForUser(userId: string, acitivtyId?: string): Promise<TimeSheetLog>;
+    getLastActivityForUser(userId: string): Promise<TimeSheetLog>;
     getById(activityId: string): Promise<TimeSheetLog>;
     getStatistic(userId?: string): Promise<IGetStatisticsOutput[]>;
     setStartTime(setStartTimeInput: ISetStartTime): Promise<void>;

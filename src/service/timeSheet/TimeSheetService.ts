@@ -14,7 +14,7 @@ export class TimeSheetService implements ITimeSheetService {
     ) {}
 
     public async getLastActivity(userId: string): Promise<TimeSheetLog> {
-        const timeSheet = await this.timeSheetRepository.getLastActivityForUser(userId, 'acitivtyId: string');
+        const timeSheet = await this.timeSheetRepository.getLastActivityForUser(userId);
         return timeSheet;
     }
 
