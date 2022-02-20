@@ -22,11 +22,8 @@ export class ExpressRoutesManager implements IRoutesManager {
 
     public async register(router: IRouter): Promise<void> {
         //router.use(bodyParser.urlencoded({extended: false}));
-        //router.use(bodyParser.json() as RequestHandler));
-        //router.use(express.urlencoded({extended: false}) as RequestHandler);
-       // router.use(express.json() as RequestHandler);
-       
         this.registerApiRoutes(router);
+        this.register404Route(router);
     }
 
     protected registerApiRoutes(router: IRouter): void {
