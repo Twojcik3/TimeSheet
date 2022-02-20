@@ -15,12 +15,12 @@ export function registerUserRoutes(router: IRouter, controllerProvider: IExpress
             'startNewTime'),
     );
     router.patch(
-        '/user/:userId/:activityId/setEndTime',
+        '/user/:userId/:activityId/:endTime/setEndTime',
         controllerProvider.getHandlerFunction(TIME_SHEET_APP_TYPES.Http.Controller.UserController,
             'setEndTime')
     );
     router.get(
-        '/:userId?/getStatistics',
+        'statistic/:userId?/getStatistics',
         controllerProvider.getHandlerFunction(TIME_SHEET_APP_TYPES.Http.Controller.TimeSheetController,
             'getStatistics')
     );
