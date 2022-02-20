@@ -20,7 +20,7 @@ export function registerUserRoutes(router: IRouter, controllerProvider: IExpress
             'setEndTime')
     );
     router.get(
-        'statistic/:userId?/getStatistics',
+        '/statistic/:userId?/getStatistics',
         controllerProvider.getHandlerFunction(TIME_SHEET_APP_TYPES.Http.Controller.TimeSheetController,
             'getStatistics')
     );

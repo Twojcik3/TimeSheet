@@ -20,7 +20,7 @@ export class UserController extends AbstractBaseController {
            const setStartTimeInput = await requestValidator.validate({ ...req.params});
            await this.userHandler.setStartNewTime(setStartTimeInput);
            res.send(200, {
-               body: req.params
+               message: 'start Time has been added',
            });
        } catch (err) {
            res.status(400).send('Error');
