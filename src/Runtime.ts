@@ -6,7 +6,6 @@ import { IRoutesManager } from './service/router/IRoutesManager';
 import { TIME_SHEET_APP_TYPES } from './TimeSheetAppTypes';
 import { AppConfig } from './config/AppConfig';
 import * as url from 'url';
-import * as cors from 'cors';
 
 export class Runtime {
     constructor (
@@ -15,11 +14,7 @@ export class Runtime {
     
     public startHttpServer(appConfig: AppConfig){
         console.log('RunTime, starting Http server');
-        const app = express();
-        app.use(cors({
-            credentials: true,
-            origin: true,
-        }));    
+        const app = express();  
         const routesManager = this.container.get<IRoutesManager>(TIME_SHEET_APP_TYPES.Http.Routes.RoutesManager);
         routesManager.register(app);
         const listenURL = url.parse(appConfig.endpoint);
