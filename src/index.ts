@@ -8,7 +8,6 @@ import { Runtime } from './Runtime';
 import { bootstrap } from "./Bootstrap";
 import { DataBaseCreator } from "./db/seed/DataBaseCreator";
 
-console.log('index');
 const dbConfigObject = {
     driver: 'driver',
     host: 'localhost',
