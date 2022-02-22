@@ -6,6 +6,7 @@ import { ConnectionConfigFactory } from "./db/ConnectionConfig";
 import { AppConfig } from "./config/AppConfig";
 import { Runtime } from './Runtime';
 import { bootstrap } from "./Bootstrap";
+import { DataBaseCreator } from "./db/seed/DataBaseCreator";
 
 console.log('index');
 const dbConfigObject = {
@@ -30,6 +31,8 @@ const appConfigObject = {
     appConfig.deserialize(appConfigObject);
     const container = new Container();
     const connectionConfigFactory = new ConnectionConfigFactory(dbConfig);
+    const databaseCreator = new DataBaseCreator(dbConfig);
+    await databaseCreator.create();
     try {
         const dbConnector = new DbConnector();
         await dbConnector.connect(dbConfig, connectionConfigFactory);

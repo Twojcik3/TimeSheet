@@ -7,7 +7,7 @@ import { IUserRepository } from './IUserRepository';
 @EntityRepository(User)
 export class PostgreSQLUserRepository extends Repository<User> implements IUserRepository {
     public async getById(id: string): Promise<User> {
-       const queryResult = await this.query(`SELECT * FROM "user" WHERE id = '${id}'`)
+       const queryResult = await this.query(`SELECT * FROM "user" WHERE id = '${id}'`);
        return queryResult;
     }
     public async getAllUsers(): Promise<void> {
